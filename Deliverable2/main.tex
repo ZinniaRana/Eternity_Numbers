@@ -1,173 +1,220 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lachaise Assignment
-% LaTeX Template
-% Version 1.0 (26/6/2018)
-%
-% This template originates from:
-% http://www.LaTeXTemplates.com
-%
-% Authors:
-% Marion Lachaise & François Févotte
-% Vel (vel@LaTeXTemplates.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+ \usepackage{url}
+ \documentclass{article}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\titleformat{\section}[block]{\color{blue}\Large\bfseries\filcenter}{}{1em}{}
 
-\input{structure.tex} % Include the file specifying the document structure and custom commands
-
-%----------------------------------------------------------------------------------------
-%	ASSIGNMENT INFORMATION
-%----------------------------------------------------------------------------------------
-
-\title{Euler Number(e)} % Title of the assignment
-
-\author{Zinnia Rana\\ \texttt{zinnia.rana1@gmail.com}} % Author name and email address
-
-\date{Concordia University-- \today} % University, school and/or department name(s) and a date
-
-%----------------------------------------------------------------------------------------
-
+ 
 \begin{document}
 
-\maketitle % Print the title
+\begin{titlepage}
 
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
 
-\section*{Introduction} % Unnumbered section
+\center 
+ \includegraphics[width=0.4\columnwidth]{concordia-logo.png} 
 
-Euler Number is one of the unique irrational number, and important among other popular numbers such as pi, discovered in early 18th century  named after the Swiss mathematician Leonhard Euler. 'e'is considered as the base of natural logarithm and it natural log value is equal to one, and is often confused with Euler's constant. The first few digits are:\textbf{2.7182818284590452353602874713527} 
+\textsc{}  \\[2cm]
+\textsc{\LARGE Concordia University}\\[1.5cm] 
+\textsc{\Large Deliverable 2}\\[0.5cm] 
+\textsc{\large }\\[0.5cm] 
+
+{ \huge \bfseries EULER NUMBER}\\[0.5cm]
+{ \normalsize \bfseries ETERNITY:NUMBERS}\\[1cm]
+
+ \noident \textbf{Repository Address: }{\url{https://github.com/ZinniaRana/Eternity_Numbers/tree/master/Deliverable2}}\\[2cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\text Submitted By:\\
+Zinnia Rana \\
+40074965
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+Supervisor \\
+Prof. Pankaj \text{Kamthan} 
+\end{flushright}
+\end{minipage}
 
 
-It is considered as the limit of <formula> as n increases. This expression lead to foundation of compound interest known as Napier's Constant. e is considered to be highly beneficial for continuously evolving process as is derived as the base of growth rate. It is commonly used in calculating probability in Bernoulli trials, Derangements and especically calculus.
+\end{titlepage}
 
-\section*{User Stories}  % Unnumbered section
+
+\section*{ABSTRACT} % Unnumbered section
+\raggedright From previous analysis of the interviews and what possible domain model and its Use Cases can be, it helped me focus on the main aspects of the User Stories. I did some research and figured out the requirements of user for the calculator and estimated the priority and time considering time constraints and implementation factors. The user stories are source from existing user stories and mainly external existing user stories. Below are the details of the user stories which helped me implement my calculator important features.\\[2cm]
+
+\section*{USER STORIES} \\  % Unnumbered section
 %------------------------------------------------
 
 \subsection{User Story 1} % Unnumbered section
-
-\noindent \textbf {Statement: }As a research assistant, I want to calculate growth/decay rate so that I can estimate software utilization over the period of time. \\*
+\noindent \textbf {Statement: }As a Statistical Analyst, I want to calculate value of e base x to compute time taken to get a task done which will help me depict the graph distribution. \\*
 \newline 
-\noindent \textbf {Constraints:}  Usability, Modifiability\\*
+\noindent \textbf {Constraints:}  Accuracy, Reusability\\*
 \newline
 \textbf{Acceptance Criteria: } 
 \begin{itemize}
-  \item Given that user press 'O' to list all pre-defined operations \newline Then shows the list of all calculations that can be evaluated and it shows growth rate as an option.   
-  \newline When user clicks on option growth rate then system displays the equation
-  \newline Then ask for input the values in the equation.
+\item Correct precise value of e is returned
+\item Operations performed upon e must give precise answer upto 3 decimal places
+  \item Time calculated must be precised upto 2 digits
+\end{itemize}
+
+\noindent \textbf {Priority: }Medium\\[0.4cm]
+\newline
+\noindent \textbf {Estimate: } 3
+\newline
+
+
+
+
+
+%------------------------------------------------
+\newpage
+\subsection{User Story 2} % Unnumbered section
+
+\noindent \textbf {Statement: }As a research assistant, I want to save the result to use it in later calculations. \\*
+\newline 
+\noindent \textbf {Constraints:}  Re-usability\\*
+\newline
+\textbf{Acceptance Criteria: } 
+\begin{itemize}
+  \item Given any number pressed or result calculated, when press MM key, number saved in the memory should be equal to number displayed on screen.\newline
+
+\end{itemize}
+
+\noindent \textbf {Priority: }High\\[0.4cm]
+\newline
+\noindent \textbf {Estimate:} 1\\[2cm]
+
+
+
+%------------------------------------------------
+\subsection{User Story 3} % Unnumbered section
+\noindent \textbf {Statement: }As a research assistant, I want to calculate growth rate so that I can estimate software utilization over the period of time. \\*
+\newline 
+\noindent \textbf {Constraints:} Precision, Usability\\*
+\newline
+\textbf{Acceptance Criteria: } 
+\begin{itemize}
+  \item Given that user press 'Op' to calculate  growth formula.
+  \newline Then it prompts the user for input values in the equation.
   \newline And then system evaluates the equation and displays the result.\newline
 \end{itemize}
 
-\noindent \textbf {Priority:} High\\*
+\noindent \textbf {Priority:} High\\[0.4cm]
 \newline
 \noindent \textbf {Estimate:} 2\\*
 \newline
 
 
 %------------------------------------------------
-\pagebreak
-\subsection{User Story 2} % Unnumbered section
-
-\noindent \textbf {Statement: }As a research assistant, I want to save the previous result to use it later in other calculations. \\*
-\newline 
-\noindent \textbf {Constraints:}  Usability\\*
-\newline
-\textbf{Acceptance Criteria: } 
-\begin{itemize}
-  \item Given any number pressed
-  \newline When press MM key, number is saved in the memory
-  \newline Then Display status 'S' to indicate number is saved
-  \newline Then Display 'O' to indicate next operation can be performed
-  
-  \item Given any number pressed
-  \newline When press MM key, number is saved in the memory
-  \newline Then Display status 'S' to indicate number is saved
-  \newline Then Display 'O' to indicate next operation can be performed\newline
-\end{itemize}
-
-\noindent \textbf {Priority:}High\\*
-\newline
-\noindent \textbf {Estimate:} 1\\*
-\newline
-
-%------------------------------------------------
-\subsection{User Story 3} % Unnumbered section
-
-\noindent \textbf {Statement: }As a Statistical Analyst, I want to calculate time taken to get task done to depict the graph distribution. \\*
-\newline 
-\noindent \textbf {Constraints:}  Accuracy, Modifiability\\*
-\newline
-\textbf{Acceptance Criteria: } 
-\begin{itemize}
-  \item 
-\end{itemize}
-
-\noindent \textbf {Priority: }High\\*
-\newline
-\noindent \textbf {Estimate: } 1
-\newline
-
-%------------------------------------------------
+\newpage
 \subsection{User Story 4} % Unnumbered section
 
-\noindent \textbf {Statement: }As a Student, I want to calculate value at each point of graph to depict the graph distribution \\*
+\noindent \textbf {Statement: }As a Student, I want predefined operations in calculator so that I can just select which equation to calculate and input values to get final output \\*
 \newline 
-\noindent \textbf {Constraints:}  Accuracy, Modifiability\\*
+\noindent \textbf {Constraints:} Re-usability\\*
 \newline
 \textbf{Acceptance Criteria: } 
 \begin{itemize}
   \item Check the entered number for calculation is valid
-  \item Check the expected output is accurate.
+  \item Check the expected output is accurate as expected.
   
 \end{itemize}
 
-\noindent \textbf {Priority:}High\\*
+\noindent \textbf {Priority:}High\\[0.4cm]
 \newline
-\noindent \textbf {Estimate:} 1\\*
-\newline
+\noindent \textbf {Estimate:} 2\\[2cm]
+
 
 %------------------------------------------------
 \subsection{User Story 5} % Unnumbered section
 
-\noindent \textbf {Statement: }As a research assistant, I want to calculate probability of a particular instance occurring using Euler identity  so that I can estimate the priority of implementing features. \\*
+\noindent \textbf {Statement: }As an Entrepreneur, I want to calculate probability of a particular instance occurring using Euler identity  so that I can estimate the priority of implementing features. \\*
 \newline 
-\noindent \textbf {Constraints:}  Precision\\*
+\noindent \textbf {Constraints:}  Precision, Extensibility\\*
 \newline
 \textbf{Acceptance Criteria: } 
 \begin{itemize}
-  \item 
+  \item Output result needs to be checked whether it is precise.
+  \item Need to check correct precise value of pi and e is returned.
+  
 \end{itemize}
 
-\noindent \textbf {Priority:}High\\*
+\noindent \textbf {Priority:}Medium\\[0.4cm]
 \newline
-\noindent \textbf {Estimate:} 1\\*
+\noindent \textbf {Estimate:} 4\\*
 \newline
 
 %------------------------------------------------
+\newpage
 \subsection{User Story 6} % Unnumbered section
 
-\noindent \textbf {Statement: }As a Garduate Mathematics student, I want my calculator should contain pi to calculate euler identity for probability solving questions. \\*
+\noindent \textbf {Statement: }As a Graduate Mathematics student, I want my calculator should contain e and pi to calculate Euler identity for probability solving questions. \\*
 \newline 
-\noindent \textbf {Constraints:}  Accuracy, Modifiability\\*
+\noindent \textbf {Constraints:}  Extensibility, Re-usability\\*
 \newline
 \textbf{Acceptance Criteria: } 
 \begin{itemize}
-  \item Correct precise value of pi returned 
-  \item Operations feasible with pi and other mathematical constants
-  \item Result displayed should match precision decimal points user entered
+  \item Correct precise value of pi returned.
+  \item Operations feasible with pi and other mathematical constants.
+  \item Result displayed should match precision decimal points user entered.\newline
 \end{itemize}
 
-\noindent \textbf {Priority:}High\\*
+\noindent \textbf {Priority:}Medium\\[0.4cm]
 \newline
-\noindent \textbf {Estimate:} 1\\*
+\noindent \textbf {Estimate:} 5\\*
 \newline
+\section*{BACKWARD TRACEABILITY MATRIX}  % Unnumbered section
+\newline
+\centering
+\begin{tabular}{ |p{3cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|  }
+
+ \hline
+ 
+  & Use Case & User Story & Interview & External\\[0.5cm] \hline
+ \hline
+
+User Story 1    &   &   X &   &  \\[0.5cm] \hline
+User Story 2    &   & UC 1  &   &\\[0.5cm] \hline
+User Story 3    &   &   &   & X \\[0.5cm] \hline
+User Story 4    & X  &   &   & \\[0.5cm] \hline
+User Story 5    &   &   &   & X \\[0.5cm] \hline
+User Story 6    &  US 5 &   &   & \\[0.5cm] \hline
+ \hline
+\end{tabular}
+\newpage
+\section*{CONCLUSION}  % Unnumbered section
+\raggedright After analyzing the user requirements and what features they want to be implemented in the  calculator, I have chosen three  highest priority  user stories for implementing my calculator features, keeping time constraints into account.
+\section*{REFERENCES}  % Unnumbered section
+
+\begingroup
+\renewcommand{\section}[2]{}%
+\begin{thebibliography}{}
+\bibitem{1} 
+https://betterexplained.com/articles/an-intuitive-guide-to-exponential-functions-e/
+ 
+\bibitem{2} 
+https://www.quora.com/Can-someone-explain-the-number-e-Eulers-number-to-me
+ 
+\bibitem{3} 
+https://medium.com/@ozanerhansha/applications-of-eulers-formula-857bf60ba32d
+\bibitem{4}
+https://www.slideshare.net/DhavalDalal/calculator-stories
+\bibitem{5}
+https://www.purplemath.com/modules/expofcns5.htm
+\end{thebibliography}
 \end{document}
